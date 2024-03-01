@@ -1,0 +1,35 @@
+[
+  {
+    "description": "Polo manga larga estampada con dibujitos",
+    "discount": 20,
+    "imageRoute": "",
+    "moreColors": true,
+    "price": 18.99
+  },
+  {
+    "description": "Polo manga larga estampada con dibujitos",
+    "discount": 40,
+    "imageRoute": "",
+    "moreColors": false,
+    "price": 18.99
+  },
+  {
+    "description": "Polo manga larga estampada con dibujitos",
+    "discount": 75,
+    "imageRoute": "",
+    "moreColors": true,
+    "price": 18.99
+  },{
+  "description": "Polo manga larga estampada con dibujitos",
+  "imageRoute": "",
+  "moreColors": true,
+  "price": 18.99
+  },
+  {
+    "description": "Polo manga larga estampada con dibujitos",
+    "discount": 40,
+    "imageRoute": "",
+    "moreColors": true,
+    "price": 18.99
+  }
+]
