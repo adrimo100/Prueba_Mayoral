@@ -81,7 +81,7 @@ export default class CardComponent extends LitElement {
       <div class="card">
         <img src="${this.product?.imageRoute}" alt="no-image">
         <p class="card-description" >${this.product?.description ?? 'no-description'}</p>
-        <p class="${this.product?.discount ? 'line-through' : ''}">${'18,99'}€</p>
+        <p class="${this.product?.discount ? 'line-through' : ''}">${this.product?.price}€</p>
         <p class="discount-price ${!this.product?.discount ? 'invisible' : ''}">${this.getPriceWithDiscount(this.product?.price ?? 0, this.product?.discount ?? 0)}€(-${this.product?.discount}%)</p>
         <p class="more-colors ${!this.product?.moreColors ? 'invisible' : ''}">más colores</p>
         <button>AÑADIR</button>

@@ -4,7 +4,7 @@
     "discount": 20,
     "imageRoute": "",
     "moreColors": true,
-    "price": 18.99
+    "price": 19.99
   },
   {
     "description": "Polo manga larga estampada con dibujitos",
@@ -18,7 +18,7 @@
     "discount": 75,
     "imageRoute": "",
     "moreColors": true,
-    "price": 18.99
+    "price": 75.99
   },{
   "description": "Polo manga larga estampada con dibujitos",
   "imageRoute": "",
@@ -30,6 +30,6 @@
     "discount": 40,
     "imageRoute": "",
     "moreColors": true,
-    "price": 18.99
+    "price": 24.99
   }
 ]
