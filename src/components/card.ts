@@ -23,6 +23,7 @@ export default class CardComponent extends LitElement {
     .card img {
       height: 150px;
       width: 190px;
+      object-fit: cover;
     }
 
     .card .card-description {
@@ -72,8 +73,6 @@ export default class CardComponent extends LitElement {
 
   constructor() {
     super();
-
-    console.log(this.product)
   }
 
   override render() {

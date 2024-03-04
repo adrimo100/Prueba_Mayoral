@@ -11,12 +11,26 @@ export class ShopView extends LitElement {
   @state()
   private _productsList: Product[] = []
 
+  private currentInputFilterValue = ''
+
   static override styles = css`
+    :root {
+      --mayor-l-num-columns: 4;
+      --minor-l-num-columns: 3;
+      --mayor-s-num-columns: 3;
+      --minor-s-num-columns: 2;
+    }
+
     .product-list {
       display: grid;
       grid-template-columns: repeat(4, minmax(150px, 1fr));
       gap: 20px;
-      width: fit-content;
+      justify-content: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
     }
   `
 
@@ -25,27 +39,29 @@ export class ShopView extends LitElement {
     new Store();
 
     this.getProductsList();
-
   }
 
   override render(): unknown {
     return html`
-      <headbar-component></headbar-component>
-      <div class="product-list">
-        ${this.getProductsCards()}
-      </div>
+      <headbar-component @newInputValue="${(event: CustomEvent) => {
+        this.currentInputFilterValue = event.detail;
+        this.getProductsList();
+      }}"></headbar-component>
+      <main>
+        <div class="product-list">
+          ${this._productsList.map((product) => {
+            return html`
+        <card-component .product="${product}"></card-component>
+        `
+          })}
+        </div>
+      </main>
     `
   }
 
   private async getProductsList() {
-    this._productsList = await Store.storeSingleton?.loadData() ?? [];
-  }
+    const productsArray= await Store.storeSingleton?.loadData() ?? [];
 
-  private readonly getProductsCards = () => {
-   return this._productsList.map((product) => {
-      return html`
-      <card-component .product="${product}"></card-component>
-      `
-    })
+    this._productsList = this.currentInputFilterValue ? productsArray.filter(product => product.description.toLowerCase().includes(this.currentInputFilterValue.toLowerCase())) : productsArray
   }
 }

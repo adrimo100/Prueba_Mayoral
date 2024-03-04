@@ -1,8 +1,14 @@
 import {css, html, LitElement} from "lit";
-import {customElement} from 'lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 
 @customElement('headbar-component')
 export default class HeadbarComponent extends LitElement {
+
+  private inputTimerSubscription: NodeJS.Timeout | null = null;
+
+  @query('#productFilter')
+  input!: HTMLInputElement;
+
 
   static override styles = css`
       input {
@@ -44,8 +50,27 @@ export default class HeadbarComponent extends LitElement {
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>
-        <input type="text" placeholder="Buscar">
+        <input @input="${this.onInputChange}" type="text" placeholder="Buscar" id="productFilter">
       </div>
     `
   }
+
+  emitCustomEvent(value: string) {
+    this.dispatchEvent(new CustomEvent<string>('newInputValue', {
+      detail: value,
+      bubbles: true,
+      composed: true
+    }))
+  }
+
+  onInputChange(){
+    if(this.inputTimerSubscription){
+      clearTimeout(this.inputTimerSubscription)
+    }
+
+    this.inputTimerSubscription = setTimeout(() => {
+      this.emitCustomEvent(this.input.value.trim())
+    }, 750)
+  }
+
 }

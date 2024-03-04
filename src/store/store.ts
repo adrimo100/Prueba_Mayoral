@@ -10,8 +10,6 @@ class Store {
   }
 
   public async loadData(): Promise<Product[]> {
-    console.log("Loading Data...")
-
     const response = await fetch('dist/products.json');
     if (!response.ok) {
       throw new Error('Network response was not ok');

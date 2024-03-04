@@ -1,35 +1,69 @@
 [
   {
-    "description": "Polo manga larga estampada con dibujitos",
-    "discount": 20,
-    "imageRoute": "",
-    "moreColors": true,
-    "price": 19.99
-  },
-  {
-    "description": "Polo manga larga estampada con dibujitos",
-    "discount": 40,
-    "imageRoute": "",
+    "description": "Camiseta ajustada de manga corta, color sólido",
+    "discount": 10,
+    "imageRoute": "https://media.istockphoto.com/id/1270228475/es/foto/mujer-sonriente-en-camiseta-posando-con-los-brazos-en-los-bolsillos.jpg?s=2048x2048&w=is&k=20&c=DD-rWfmfyUtzHvysXNJlsZ8C0R07PY4-mEF1fOjsTds=",
     "moreColors": false,
-    "price": 18.99
+    "price": 29.99
   },
   {
-    "description": "Polo manga larga estampada con dibujitos",
-    "discount": 75,
-    "imageRoute": "",
+    "description": "Blusa elegante de manga larga, estampado floral",
+    "discount": 15,
+    "imageRoute": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "moreColors": true,
-    "price": 75.99
-  },{
-  "description": "Polo manga larga estampada con dibujitos",
-  "imageRoute": "",
-  "moreColors": true,
-  "price": 18.99
+    "price": 34.99
   },
   {
-    "description": "Polo manga larga estampada con dibujitos",
-    "discount": 40,
-    "imageRoute": "",
+    "description": "Sudadera con capucha unisex, bolsillo canguro",
+    "imageRoute": "https://images.unsplash.com/photo-1527719327859-c6ce80353573?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHNoaXJ0fGVufDB8fDB8fHww",
+    "moreColors": false,
+    "price": 49.99
+  },
+  {
+    "description": "Chaqueta ligera de entretiempo, cremallera frontal",
+    "discount": 25,
+    "imageRoute": "https://media.istockphoto.com/id/1270228475/es/foto/mujer-sonriente-en-camiseta-posando-con-los-brazos-en-los-bolsillos.jpg?s=2048x2048&w=is&k=20&c=DD-rWfmfyUtzHvysXNJlsZ8C0R07PY4-mEF1fOjsTds=",
     "moreColors": true,
-    "price": 24.99
+    "price": 59.99
+  },
+  {
+    "description": "Pantalones chinos slim fit, varios colores",
+    "imageRoute": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "moreColors": true,
+    "price": 39.99
+  },
+  {
+    "description": "Falda midi plisada, diseño geométrico",
+    "discount": 30,
+    "imageRoute": "https://images.unsplash.com/photo-1527719327859-c6ce80353573?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHNoaXJ0fGVufDB8fDB8fHww",
+    "moreColors": false,
+    "price": 25.99
+  },
+  {
+    "description": "Jersey de punto fino, cuello redondo",
+    "discount": 20,
+    "imageRoute": "https://media.istockphoto.com/id/1270228475/es/foto/mujer-sonriente-en-camiseta-posando-con-los-brazos-en-los-bolsillos.jpg?s=2048x2048&w=is&k=20&c=DD-rWfmfyUtzHvysXNJlsZ8C0R07PY4-mEF1fOjsTds=",
+    "moreColors": true,
+    "price": 32.99
+  },
+  {
+    "description": "Top de tirantes finos, detalle de encaje",
+    "discount": 5,
+    "imageRoute": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "moreColors": false,
+    "price": 22.99
+  },
+  {
+    "description": "Gafas de sol estilo aviador, protección UV",
+    "imageRoute": "https://images.unsplash.com/photo-1527719327859-c6ce80353573?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHNoaXJ0fGVufDB8fDB8fHww",
+    "moreColors": true,
+    "price": 15.99
+  },
+  {
+    "description": "Zapatillas deportivas ligeras, para running",
+    "discount": 35,
+    "imageRoute": "https://media.istockphoto.com/id/1270228475/es/foto/mujer-sonriente-en-camiseta-posando-con-los-brazos-en-los-bolsillos.jpg?s=2048x2048&w=is&k=20&c=DD-rWfmfyUtzHvysXNJlsZ8C0R07PY4-mEF1fOjsTds=",
+    "moreColors": true,
+    "price": 65.99
   }
 ]
