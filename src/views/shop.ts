@@ -4,6 +4,8 @@ import "../components/headbar";
 import "../components/card"
 import Store from "../store/store";
 import Product from "../constants/Product";
+import Order from "../constants/Order";
+import Column from "../constants/Column";
 
 @customElement('shop-view')
 export class ShopView extends LitElement {
@@ -11,21 +13,23 @@ export class ShopView extends LitElement {
   @state()
   private _productsList: Product[] = []
 
+  @state()
+  private currentOrder: Order = Order.Ascendant;
+
   private currentInputFilterValue = ''
 
   static override styles = css`
-    :root {
-      --mayor-l-num-columns: 4;
-      --minor-l-num-columns: 3;
-      --mayor-s-num-columns: 3;
-      --minor-s-num-columns: 2;
-    }
-
     .product-list {
       display: grid;
-      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      grid-template-columns: repeat(var(--mayor-num-columns), minmax(150px, 1fr));
       gap: 20px;
       justify-content: center;
+    }
+
+    @media only screen and (max-width: 900px) {
+      .product-list {
+        grid-template-columns: repeat(var(--minor-num-columns), minmax(150px, 1fr));
+      }
     }
 
     main {
@@ -43,10 +47,18 @@ export class ShopView extends LitElement {
 
   override render(): unknown {
     return html`
-      <headbar-component @newInputValue="${(event: CustomEvent) => {
+      <headbar-component
+        @newOrderValue="${(e: CustomEvent) => {
+        this.currentOrder = +e.detail;
+        this.getProductsList();
+      }}"
+        @newInputValue="${(event: CustomEvent) => {
         this.currentInputFilterValue = event.detail;
         this.getProductsList();
-      }}"></headbar-component>
+      }}"
+        @newColumnValue="${this.setColumns}"
+      ></headbar-component>
+
       <main>
         <div class="product-list">
           ${this._productsList.map((product) => {
@@ -62,6 +74,27 @@ export class ShopView extends LitElement {
   private async getProductsList() {
     const productsArray= await Store.storeSingleton?.loadData() ?? [];
 
-    this._productsList = this.currentInputFilterValue ? productsArray.filter(product => product.description.toLowerCase().includes(this.currentInputFilterValue.toLowerCase())) : productsArray
+    const filterdArray = this.currentInputFilterValue ? productsArray.filter(product => product.description.toLowerCase().includes(this.currentInputFilterValue.toLowerCase())) : productsArray
+
+    this._productsList = filterdArray.sort((a, b) => this.sortProductsByPrice(a, b))
+  }
+
+  private sortProductsByPrice(a: Product, b: Product) {
+    if (this.currentOrder === Order.Ascendant) {
+      return a.price - b.price;
+    } else {
+      return b.price - a.price;
+    }
+  }
+
+  private setColumns(e: CustomEvent) {
+    if(+e.detail === Column.L) {
+      document.documentElement.style.setProperty('--mayor-num-columns', '4');
+      document.documentElement.style.setProperty('--minor-num-columns', '3');
+    }
+    else {
+      document.documentElement.style.setProperty('--mayor-num-columns', '3');
+      document.documentElement.style.setProperty('--minor-num-columns', '2');
+    }
   }
 }
